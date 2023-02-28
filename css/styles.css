@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;1,100;1,200;1,300&display=swap');
+:root{
+    --color:#6C5CE7
+}
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    transition: all .2s linear;
+    text-decoration: none;
+    font-size: 16px;
+}
+body{
+    overflow-x: hidden;
+   
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    /* position: fixed;
+    top: 0;
+    left: 0; */
+    z-index: 100;
+    background:purple;
+    align-items: center;
+}
+.logo a{
+    font-size: 1.5rem;
+    color: #fff;
+}
+.logo a i{
+    padding: 0 1rem;
+    margin-right: .5rem;
+    font-size: 1.5rem;
+}
+.menu ul{
+    list-style: none;
+    display: flex;
+}
+.menu ul li{
+    margin: 0 1rem;
+}
+.menu ul li a{
+    
+    color: #fff;
+}
+
+.menu ul li a:hover{
+    color: #ccc;
+}
+
+/* Styling hamburger icoon */
+
+.fa-bars{
+    font-size: 2rem;
+    color: #fff;
+    display: none;
+}
+.home{
+    height: 91vh;
+    background:linear-gradient(purple, var(--color));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;  
+    color: #fff; 
+}
+.heading{
+    font-size: 4rem;
+    text-shadow: 0 .3rem .5rem rgba(0,0,0,.3);
+    text-align: center;
+}
+.slogan{
+    color:#eee;
+    text-shadow: 0 .3rem .5rem rgba(0,0,0,.3);
+    font-weight: 400;
+    text-align: center;
+}
+.home button{
+    padding: 0.5rem 2rem;
+    background-color: #fff;
+    color: #444;
+    border: none;
+    margin-top: 1rem;
+}
+
+.home button:hover{
+    letter-spacing: .1rem;
+    cursor: pointer;
+}
+
+.wave{
+    background: url('/img/wave.png');
+    background-size: 100rem 11rem;
+    background-repeat: repeat-x;
+    width: 100%;
+    height: 7rem;
+    position: absolute;
+    bottom: -.5rem;
+    animation: waves 10s linear infinite;
+    left: 0;
+}
+.wave2{
+    animation-direction: reverse;
+    opacity: .2;
+}
+.wave3{
+    animation-duration: 5s;
+    opacity: .5;
+}
+
+@keyframes waves {
+    0%{
+        background-position-x: 0;
+    }
+    100%{
+        background-position-x: 100rem;
+    }
+}
+
+@keyframes rotation {
+    
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.fa-cog{
+    font-size: 20rem;
+    opacity: .15;
+    color: #fff;
+    position: absolute;
+    animation: rotation 10s linear infinite;
+
+}
+.nut1{
+    top:10%;
+    left:-10rem;
+}
+.nut2{
+    bottom: 23%;
+    right:-13rem
+}
+
+.about-us{
+    min-width: 100%;
+    min-height: 100vh;
+    text-align: center;
+    overflow: hidden;
+}
+.about-us .heading{
+    font-size: 3.5rem;
+    margin: 2rem;
+    padding-top: 6rem;
+    color: var(--color);
+    z-index: 2;
+}
+
+#about-us::before {
+    content: " ";
+    background-color: #6c5ce7;
+    height: 40rem;
+    width: 40rem;
+    position: absolute;
+    opacity: 0.2;
+    border-radius: 50%;
+    z-index: -1;
+    bottom: -41rem;
+    right: -21rem;
+}
+#about-us::after {
+    content: " ";
+    background-color: rgb(0 0 0 / 30%);
+    height: 35rem;
+    width: 35rem;
+    position: absolute;
+    opacity: 0.2;
+    border-radius: 50%;
+    z-index: -1;
+    bottom: -50rem;
+    left: -16rem;
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 4rem;
+}
+.row .content{
+    text-align: left;
+    width: 50%;
+}
+
+.row .content h3{
+    font-size: 2.5rem;
+}
+.image{
+    width: 50%;
+}
+.image img{
+    max-width: 100%;
+    height: auto;
+}
+
+.btn{
+    padding: 6px 30px;
+    text-transform: capitalize;
+    border: none;
+    border-radius: 22px;
+    background-color: var(--color);
+    color: #fff;
+    margin-top: 1rem;
+    box-shadow: 0 .2rem .5rem rgba(0,0,0,.3);
+}
+.btn:hover{
+    cursor: pointer;
+    letter-spacing: .1rem;
+    opacity: .8;
+}
+
+
+@media (max-width:768px){
+
+
+
+    html{
+        font-size: 50%;
+    }
+
+    .row{
+        flex-direction: column-reverse;
+    }
+    .row .content {
+        text-align: center;
+        width: 100%;
+        margin-top: 4rem;
+    }
+    .image{
+        width: 100vh;
+    }
+    .image img{
+        max-width: 70%;
+        height: auto;
+    }
+    .logo a{
+        font-size: 3rem;
+    }
+    .logo a i{
+        font-size: 3rem;
+    }
+    .fa-bars{
+        display: block;
+        font-size: 3rem;
+    }
+    .fa-bars:hover{
+        color: #ccc;
+    }
+    nav{
+        flex-wrap: wrap;
+        
+    }
+    nav .menu{
+        background-color: #ffffff;
+        display: block;
+        width: 100%;
+        height: 54%;
+        position: fixed;
+        transform: translateY(-59%);
+        left: 0;
+       
+    }
+    nav .menu ul{
+        flex-direction: column;
+        margin: 2rem 0;
+        padding: 1rem 0;
+
+    }
+    nav .menu ul li {
+        text-align: center;
+        margin: 1rem 0;
+    }
+    nav .menu ul li a{
+        color: black;
+        font-size: 3rem;
+    }
+    .fa-times{
+        transform: rotate(180deg);
+    }
+    nav .menu-toggle{
+        transform: translateY(59%);
+    }
+    .home {
+        font-size: 4rem;
+    }
+    .slogan{
+        font-size: 1.7rem;
+    }
+}

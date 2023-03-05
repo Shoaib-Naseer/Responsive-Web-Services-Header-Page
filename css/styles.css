@@ -155,54 +155,63 @@ nav{
     position: relative;
     overflow: hidden;
 }
-
-
-.border_style_1::before{
-    content: " ";
-    display: inline-block;
-    width: 3rem;
-    height: 3rem;
+#about-us , #services ,#team{
     position: relative;
+}
+/* Styling for border in headings */
+#about-us::before , #about-us::after , #services::before , #services::after , #team::before , #team::after{
+content: " ";
+position: relative;
+display: inline-block;
+width: 2.5rem;
+height: 2.8rem;
+
+}
+#about-us::before , #services::before , #team::before{
+border-top:.4rem solid var(--color);
+border-left:.4rem solid var(--color);
+left: 2.1rem;
+top: -.3rem;
+}
+#about-us::after,#services::after , #team::after{
+    border-bottom:.4rem solid var(--color);
+border-right:.4rem solid var(--color);
+right: 1.8rem;
+bottom: -1rem;
+}
+
+#services::before{
+    left: 2.1rem;
     top: -.5rem;
-    left: 2.3rem;
-    border-left: .5rem solid var(--color);
-    border-top: .5rem solid var(--color);
 }
-
-.border_style_1::after{
-    content: " ";
-    display: inline-block;
-    width: 3rem;
-    height: 3rem;
-    position: relative;
-    bottom: -1.6rem;
-    right: 2rem;
-    border-right: .5rem solid var(--color);
-    border-bottom: .5rem solid var(--color);
-}
-.border_style_2::before{
-    content: " ";
-    display: inline-block;
-    width: 3rem;
-    height: 3rem;
-    position: relative;
-    top: -.7rem;
+#team::before{
+    top:-.7rem;
     left: 2rem;
-    border-left: .5rem solid var(--color);
-    border-top: .5rem solid var(--color);
 }
 
-.border_style_2::after{
+/* Styling for background circles in about us section */
+.about-us::before, .about-us::after{
     content: " ";
-    display: inline-block;
-    width: 3rem;
-    height: 3rem;
-    position: relative;
-    bottom: -1.6rem;
-    right: 2rem;
-    border-right: .5rem solid var(--color);
-    border-bottom: .5rem solid var(--color);
+    position: absolute;
+    z-index: -1;
+    opacity: .2;
+    border-radius: 50%;
 }
+.about-us::before{
+    background: #ccc;
+    height: 40rem;
+    width: 40rem;
+    bottom:-1rem; left:-20rem;
+}
+
+.about-us::after{
+    background: var(--color);
+    height: 30rem;
+    width: 30rem;
+    top:8rem; right:-20rem;
+}
+
+
 
 
 
@@ -253,20 +262,9 @@ nav{
     opacity: .8;
 }
 
-/* Styling for services section */
-/* .row{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2rem 4rem;
-} */
 .service .content{
     width: 50%;
     text-align: left;
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center; */
     
 }
 
@@ -356,6 +354,28 @@ nav{
     color:var(--color)
 }
 
+
+.card::before , .card::after{
+    content: "";
+    height: 15rem;
+    width: 15rem;
+    z-index: -1;
+    position: absolute;
+    border-radius: 50%;
+    opacity: .8;
+    
+}
+.card::before {
+    background: var(--color);
+    top: -3rem;
+    right: -4rem;
+}
+
+.card::after {
+    background:#ccc;
+    bottom: -3rem;
+    left: -4rem;
+}
 
 
 @media (max-width:768px){
